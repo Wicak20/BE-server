@@ -23,3 +23,7 @@ app.use(keranjang);
 app.listen(3000, () => {
   console.log(`App running on http://localhost:3000`);
 });
+
+app.get("/", (req, res) => {
+  res.status(200).json({ status: 200, message: "server running" });
+});
