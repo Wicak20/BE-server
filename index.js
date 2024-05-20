@@ -3,8 +3,8 @@ const app = express();
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const cors = require('cors');
-const produkRouter = require('./src/router/produkRouter'); // Ubah nama variabel dari 'produk' menjadi 'produkRouter'
-const keranjangRouter = require('./src/router/keranjangRouter'); // Ubah nama variabel dari 'keranjang' menjadi 'keranjangRouter'
+const produk = require('./src/router/produkRouter');
+const keranjang = require('./src/router/keranjangRouter');
 
 app.use(bodyParser.json());
 app.use(
@@ -17,12 +17,14 @@ app.use(morgan('combined'));
 app.use(cors());
 
 // Gunakan route yang sudah di-import
-app.use(produkRouter); // Tambahkan prefix '/produk' pada route produk
-app.use(keranjangRouter); // Tambahkan prefix '/keranjang' pada route keranjang
+app.use('/produk', produk); // Tambahkan prefix '/produk' pada route produk
+app.use('/keranjang', keranjang); // Tambahkan prefix '/keranjang' pada route keranjang
 
-app.listen(3000, () => {
-  console.log(`App running on server`);
+const port = process.env.PORT || 3000; 
+
+app.listen(port, () => {
+  console.log(`App running on port ${port}`);
 });
 
+module.exports = app;
 
-module.exports = app

@@ -1,8 +1,24 @@
 {
     "version": 2,
-    "builds": [{ "src": "index.js", "use": "@vercel/node" }],
+    "builds": [
+      {
+        "src": "./",
+        "use": "@vercel/node"
+      }
+    ],
     "routes": [
-      { "src": "/(.*)", "dest": "/index.js" }
+      {
+        "src": "/produk(.*)",
+        "dest": "/src/router/produkRouter$1"
+      },
+      {
+        "src": "/keranjang(.*)",
+        "dest": "/src/router/keranjangRouter$1"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/"
+      }
     ]
   }
   
