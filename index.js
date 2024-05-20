@@ -17,8 +17,8 @@ app.use(morgan('combined'));
 app.use(cors());
 
 // Gunakan route yang sudah di-import
-app.use('/produk', produk); // Tambahkan prefix '/produk' pada route produk
-app.use('/keranjang', keranjang); // Tambahkan prefix '/keranjang' pada route keranjang
+app.use( produk); // Tambahkan prefix '/produk' pada route produk
+app.use( keranjang); // Tambahkan prefix '/keranjang' pada route keranjang
 
 const port = process.env.PORT || 3000; 
 
