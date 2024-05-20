@@ -24,8 +24,5 @@ app.listen(3000, () => {
   console.log(`App running on server`);
 });
 
-app.get("/", (req, res) => {
-  res.status(200).json({ status: 200, message: "server running" });
-});
 
 module.exports = app
