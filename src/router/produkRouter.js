@@ -1,7 +1,9 @@
-const express = require('express'); // Perhatikan penggunaan modul express yang benar
-const router = express.Router(); // Menggunakan express.Router() untuk membuat router baru
 const { addProduct, showProduct, spesificProduct, editProduct, deleteProduct } = require('../controller/produkController');
 const upload = require('../middleware/multer');
+
+const app = require('express')
+const router = app.Router()
+
 
 router.post('/product', upload.single('photo_product'), addProduct);
 router.get('/product', showProduct);

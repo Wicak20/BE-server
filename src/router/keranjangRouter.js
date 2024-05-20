@@ -1,5 +1,5 @@
-const express = require('express'); // Mengimpor modul express
-const router = express.Router(); // Menggunakan Router dari modul express
+const app = require('express')
+const router = app.Router()
 
 const { addCart, showCart, deleteCartProduct, updateStatus, showMyBought } = require('../controller/keranjangController');
 

@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const router = express.Router();
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const cors = require('cors');
@@ -29,4 +28,4 @@ app.get("/", (req, res) => {
   res.status(200).json({ status: 200, message: "server running" });
 });
 
-module.exports = router
+module.exports = app
